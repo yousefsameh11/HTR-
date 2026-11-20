@@ -11,8 +11,6 @@ CRNN + BiLSTM + CTC model with a fine-tuned TrOCR (Transformer OCR) model on
 the Teklia/IAM-line dataset.
 
 **Reference implementation:**
-https://www.kaggle.com/datasets/nibinv23/iam-handwriting-word-database 
-
 Line-level handwritten English text recognition on the
 [Teklia/IAM-line](https://huggingface.co/datasets/Teklia/IAM-line) dataset,
 comparing two architectures:
@@ -275,6 +273,7 @@ only (LSTM/CTC in FP32); full-model FP16 aborted the process on this CUDA stack.
 ## Credits
 
 ### Dataset
+https://www.kaggle.com/datasets/nibinv23/iam-handwriting-word-database
 - **Teklia/IAM-line** — line-segmented IAM handwriting dataset, distributed via
   Hugging Face Hub: https://huggingface.co/datasets/Teklia/IAM-line
   Original IAM Handwriting Database: http://www.fki.inf.unibe.ch/databases/iam-handwriting-database
