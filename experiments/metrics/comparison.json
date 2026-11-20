@@ -1,0 +1,20 @@
+{
+  "CRNN": {
+    "cer": 0.14064194427834478,
+    "wer": 0.4350844609533917,
+    "num_samples": 2915,
+    "avg_inference_time_per_line": 0.0005776453510846937,
+    "total_inference_time": 1.683836198411882,
+    "val_loss": 0.27867718370722944,
+    "training_time_seconds": 2305.521257162094
+  },
+  "TrOCR": {
+    "cer": 0.05344130375295179,
+    "wer": 0.10882639073140532,
+    "num_samples": 2915,
+    "avg_inference_time_per_line": 0.36318405265776094,
+    "total_inference_time": 1058.681513497373,
+    "val_loss": 0.19032979011535645,
+    "training_time_seconds": 857.2872
+  }
+}

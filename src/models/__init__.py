@@ -1,0 +1,1 @@
+"""Models: CRNN + BiLSTM + CTC and TrOCR wrappers."""

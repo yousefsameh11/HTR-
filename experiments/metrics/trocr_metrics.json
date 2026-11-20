@@ -1,0 +1,9 @@
+{
+  "model": "TrOCR",
+  "cer": 0.05344130375295179,
+  "wer": 0.10882639073140532,
+  "num_samples": 2915,
+  "total_inference_time": 1058.681513497373,
+  "avg_inference_time_per_line": 0.36318405265776094,
+  "val_loss": null
+}

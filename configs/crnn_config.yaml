@@ -1,0 +1,33 @@
+# CRNN + BiLSTM + CTC configuration
+
+model:
+  img_height: 64                 # fixed CNN input height (raw images are 128 px high)
+  img_width: null                # variable width (padding in collate)
+  rnn_hidden_size: 256
+  rnn_num_layers: 2
+  dropout: 0.3
+  blank_token: "<blank>"
+
+training:
+  batch_size: 16
+  learning_rate: 0.001
+  weight_decay: 1e-4
+  epochs: 50
+  scheduler: "reduce_on_plateau"  # reduce_on_plateau | cosine | step
+  scheduler_patience: 5
+  scheduler_factor: 0.5
+  early_stopping_patience: 10
+  grad_clip: 5.0
+  resume_from_checkpoint: null   # path to checkpoint to resume, e.g. checkpoints/crnn/best.pt
+
+augmentation:
+  enabled: true
+  rotation_degrees: 2.0
+  translate: 0.02
+  scale: [0.95, 1.05]
+  brightness: 0.2
+  contrast: 0.2
+
+inference:
+  beam_width: 5
+  device: "auto"

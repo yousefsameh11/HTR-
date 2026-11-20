@@ -1,0 +1,74 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+parts/
+var/
+sdist/
+dist-info/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+
+# Virtual environments
+venv/
+ENV/
+env/
+.venv/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Data & models
+data/raw/**
+data/processed/**
+checkpoints/**
+notebooks/*.ipynb
+
+# PyTorch / Hugging Face cache
+*.pt
+*.bin
+.pytorch_cache/
+.cache/huggingface/
+
+# HF dataset cache (large; users should cache locally)
+# ~/.cache/huggingface/hub/datasets--Teklia--IAM-line
+
+# Jupyter checkpoints
+.ipynb_checkpoints
+
+# Environment files
+.env
+.env.local
+
+# Install logs and wheels (not part of the project)
+*.log
+*.txt
+wheels/
+
+# But commit the real evaluation artifacts and requirements.txt
+!experiments/predictions/*.txt
+!experiments/metrics/*.json
+!experiments/figures/*.png
+!requirements.txt
+
+# Streamlit runtime
+.streamlit/
+.streamlit.pid

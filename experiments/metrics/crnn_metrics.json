@@ -1,0 +1,9 @@
+{
+  "model": "CRNN",
+  "cer": 0.14064194427834478,
+  "wer": 0.4350844609533917,
+  "num_samples": 2915,
+  "total_inference_time": 1.683836198411882,
+  "avg_inference_time_per_line": 0.0005776453510846937,
+  "val_loss": 0.422174820075921
+}

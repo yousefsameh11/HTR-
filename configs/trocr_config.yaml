@@ -1,0 +1,23 @@
+# TrOCR fine-tuning configuration
+
+model:
+  checkpoint: "microsoft/trocr-small-handwritten"
+  device: "auto"
+  save_processor: true
+
+training:
+  batch_size: 32               # fits 4 GB with fp16 + gradient checkpointing (1.25 GB peak)
+  learning_rate: 0.00005
+  weight_decay: 0.01
+  epochs: 10
+  scheduler: "cosine"
+  warmup_steps: 100            # ~10% of a 5-epoch run at batch 32
+  early_stopping_patience: 5
+  grad_clip: 1.0
+  label_smoothing: 0.0
+  resume_from_checkpoint: null   # path to fine-tuned model dir
+
+generation:
+  max_length: 128
+  num_beams: 4
+  early_stopping: true

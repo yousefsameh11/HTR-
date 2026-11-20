@@ -1,0 +1,46 @@
+# Handwritten Text Recognition (HTR) Project - Requirements
+# Verified environment: Python 3.10.11, Windows 10, CPU wheel of PyTorch.
+#
+# Notes
+# -----
+# * Install a CUDA build of torch/torchvision if you have an NVIDIA GPU:
+#     pip install torch torchvision --index-url https://download.pytorch.org/whl/cu124
+# * protobuf >= 6.36 is required by sentencepiece 0.2.3 (the sentencepiece
+#   protobuf bindings are newer than protobuf 5.x and fail to import otherwise).
+
+# Core deep learning
+torch>=2.5,<3.0
+torchvision>=0.20,<1.0
+
+# Hugging Face
+transformers>=4.40,<6.0
+datasets>=2.19,<6.0
+huggingface-hub>=0.24,<2.0
+tokenizers>=0.19
+accelerate>=0.30
+sentencepiece>=0.2.3
+protobuf>=6.36
+
+# Metrics
+jiwer>=3.0
+rapidfuzz>=3.9
+
+# Data handling
+numpy>=1.24,<3.0
+pandas>=2.0,<3.0
+pyyaml>=6.0
+
+# Image processing
+opencv-python>=4.5,<5.0
+Pillow>=9.0,<13.0
+
+# Visualization
+matplotlib>=3.5,<4.0
+scikit-learn>=1.0,<2.0
+
+# User interface
+streamlit>=1.28,<2.0
+
+# Utilities
+tqdm>=4.66,<5.0
+pytest>=8.0

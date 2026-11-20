@@ -1,0 +1,1 @@
+"""Inference module for CRNN and TrOCR models."""
