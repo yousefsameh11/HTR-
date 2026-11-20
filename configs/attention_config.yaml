@@ -1,0 +1,49 @@
+# CNN + BiLSTM + Bahdanau attention + autoregressive LSTM decoder
+#
+# Third architecture of the project. Unlike the CRNN it does not use CTC: the
+# decoder emits one character at a time with <SOS>/<EOS> delimiters and is
+# trained with a padded-masked cross-entropy.
+#
+# Batch size was chosen by measurement on the 4 GB RTX 3050 (see
+# DEVELOPMENT_LOG.md): the step cost is dominated by the Python decoding loop,
+# so 16 with width-bucketed batches is both faster and within memory.
+
+model:
+  name: attention_htr
+  img_height: 64                 # same line height as the CRNN input
+  encoder_hidden: 128            # BiLSTM hidden size per direction (output 256)
+  encoder_layers: 1              # 1-2 BiLSTM layers
+  decoder_hidden: 128            # LSTM decoder hidden size
+  decoder_layers: 1
+  embed_dim: 128                 # character embedding size
+  attn_dim: 128                  # Bahdanau additive-attention projection size
+  dropout: 0.2
+  cnn_dropout: 0.1
+  max_length: 128                # maximum decoder steps including <EOS>
+
+training:
+  epochs: 30
+  batch_size: 16
+  accum_steps: 1                 # effective batch = batch_size * accum_steps
+  learning_rate: 0.0003
+  weight_decay: 0.0001
+  teacher_forcing_start: 0.9     # probability of feeding the gold token at epoch 0
+  teacher_forcing_end: 0.5       # ... annealed linearly to this value
+  teacher_forcing_anneal_epochs: 10
+  gradient_clip: 1.0
+  early_stopping_patience: 5
+  scheduler: "reduce_on_plateau"
+  scheduler_patience: 3
+  scheduler_factor: 0.5
+
+augmentation:
+  enabled: true
+  rotation_degrees: 2.0
+  translate: 0.02
+  scale: [0.95, 1.05]
+  brightness: 0.2
+  contrast: 0.2
+
+inference:
+  max_length: 128
+  device: "auto"
