@@ -1,6 +1,10 @@
 # Handwritten Text Recognition (HTR) using Deep Learning
 
-**Team:** [Add team member names here]
+**Team:** [yousef sameh,
+momen aymen,
+mahmoud amr, 
+,motaz ahmed
+,mohamed waled ]
 
 **Idea chosen:** Line-level handwritten English text recognition comparing a
 CRNN + BiLSTM + CTC model with a fine-tuned TrOCR (Transformer OCR) model on
