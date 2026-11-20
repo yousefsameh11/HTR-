@@ -11,7 +11,7 @@ CRNN + BiLSTM + CTC model with a fine-tuned TrOCR (Transformer OCR) model on
 the Teklia/IAM-line dataset.
 
 **Reference implementation:**
-[https://github.com/yousefsameh11/HWR-](https://github.com/yousefsameh11/HWR-)
+https://www.kaggle.com/datasets/nibinv23/iam-handwriting-word-database 
 
 Line-level handwritten English text recognition on the
 [Teklia/IAM-line](https://huggingface.co/datasets/Teklia/IAM-line) dataset,
